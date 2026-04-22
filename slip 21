@@ -1,0 +1,28 @@
+Q1. Create a DataFrame from a dictionary {Subject_Name : Marks} and display the first 5 rows and
+last 5 rows of DataFrame.
+
+
+import pandas as pd
+df = pd.DataFrame({"Subject_Name":["Maths","Science","English","History","Geography","Physics","Chemistry"],
+                   "Marks":[85,90,78,88,76,92,89]})
+print(df.head())
+print(df.tail())
+
+
+Q2. Create a package banking with modules account.py and loan.py.
+a) account.py should contain function open_account(name) that accepts a user’s name and prints a message confirming account creation.
+b) loan.py should contain function apply_loan(amount)that accepts a loan amount and prints a confirmation message with the amount.
+Write a python program to import modules from banking package and demonstrate both functions.
+
+
+# account function
+def open_account(name):
+    print("Account created for", name)
+
+# loan function
+def apply_loan(amount):
+    print("Loan applied for amount:", amount)
+
+# function calls
+open_account("Shweta")
+apply_loan(50000)
