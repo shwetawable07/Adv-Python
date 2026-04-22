@@ -1,0 +1,34 @@
+Q1. Write a Python program to create a list of elements. Shuffle the elements of a given list and display
+the list. [Hint: Use random.shuffle()]
+
+
+import random
+my_list = [10, 20, 30, 40, 50]
+print("Original List:", my_list)
+random.shuffle(my_list)
+print("Shuffled List:", my_list)
+
+
+Q2. Create a following DataFrame named as “data”. Write the python code for the following
+commands.
+a) Find all rows with the label “Pencil”. Extract all columns
+b) Change the Eraser count as 25 instead of 20.
+c) List only the columns Company and Price.
+d) List only rows with labels ‘Pencil’ and ‘Pen’
+e) Rename Column Count as Quantity and display DataFrame.
+
+
+import pandas as pd
+df = pd.DataFrame({
+    "Company": ["Apsara","Natraj","Cello","Parkar","Apsara"],
+    "Count": [15,20,25,35,20],
+    "Price": [250,200,600,900,300]
+}, index=["Pencil","Pencil","Pen","Pen","Eraser"])
+print(df.loc["Pencil"])
+df.loc["Eraser","Count"] = 25
+print(df[["Company","Price"]])
+print(df.loc[["Pencil","Pen"]])
+
+# e
+df.rename(columns={"Count":"Quantity"}, inplace=True)
+print(df)
