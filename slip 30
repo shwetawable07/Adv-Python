@@ -1,0 +1,29 @@
+Q1. Write a program to replace all occurrences of ‘a’ with * in a String. (Ex. Samidha then output is S*midh*).
+
+text = input("Enter a string: ")
+result = text.replace('a', '*')
+print("Output:", result)
+
+
+
+Q2. Write a Python program that calculates the pass or fail status of multiple students.
+a) Define a function check_pass_fail(marks) to return "Pass" if marks ≥ 40, otherwise "Fail".
+b) Accept number of students and their marks.
+c) Display each student’s result.
+d) Print the total count of students who passed and failed.
+
+
+def check_pass_fail(m):
+    return "Pass" if m >= 40 else "Fail"
+n = int(input("Enter number of students: "))
+p = f = 0
+for i in range(n):
+    m = int(input("Marks: "))
+    r = check_pass_fail(m)
+    print("Result:", r)
+    if r == "Pass":
+        p += 1
+    else:
+        f += 1
+print("Total Passed:", p)
+print("Total Failed:", f)
