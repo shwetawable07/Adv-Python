@@ -1,0 +1,24 @@
+Q1. Write a Python program using regular expressions to validate whether a given string matches the pattern of three-letter words such as cat,cot,cut,mat,met,mud.
+
+import re
+word = input("Enter a word: ")
+if re.fullmatch(r'[cm][aoue][td]', word):
+    print("Valid word")
+else:
+    print("Invalid word")
+
+
+Q2. Build a package education with a sub package courses, containing modules science.py and arts.py. Each module should have a function get_subjects().
+Write a python program to display all subjects. 
+
+
+def science_get_subjects():
+    return ["Physics", "Chemistry", "Biology"]
+def arts_get_subjects():
+    return ["History", "Geography", "Political Science"]
+print("Science Subjects:")
+for s in arts_get_subjects
+for s in science_get_subjects():
+    print(s)
+print("\nArts Subjects:")():
+    print(s)
