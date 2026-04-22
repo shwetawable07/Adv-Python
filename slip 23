@@ -1,0 +1,25 @@
+Q1. Write a Python program that defines a function productInfo() which accepts a product name and its price. The function should display the product name only
+if its price is less than Rs.100. If no price is provided, the function should assume the default price to be Rs.100.
+
+
+def productInfo(name, price=100):
+    if price < 100:
+        print("Product Name:", name)
+productInfo("Pen", 50)      
+productInfo("Book", 150)    
+productInfo("Pencil")      
+
+
+Q2. Write a Python program that accepts a string from the user and performs the following tasks:
+a) Split the string into individual words.
+b) Identify and display all words that do not contain any vowels (a, e, i, o, u), ignore case while checking for vowels.
+c) Sort and display these words in alphabetical order.
+d) Display the total count of such words.
+
+
+text = input("Enter a string: ")
+words = text.split()
+result = [w for w in words if all(ch not in "aeiouAEIOU" for ch in w)]
+result.sort()
+print("Words without vowels:", result)
+print("Total count:", len(result))
