@@ -1,0 +1,555 @@
+slip 1
+
+
+def car_models():
+    return ["Swift", "Creta", "Fortuner", "i20"]
+
+def bike_models():
+    return ["Activa", "Pulsar", "Royal Enfield", "KTM"]
+
+print("Car Models:", car_models())
+print("Bike Models:", bike_models())
+
+
+
+
+slip 2
+
+
+import pandas as pd
+import numpy as np
+data = {
+    "Player": ["Hardik Pandya", "K L Rahul", "Andre Russel", "Jasprit Bumrah", "Virat Kohli", "Rohit Sharma"],
+    "Team": ["Mumbai Indians", "Kings Eleven", "Kolkata Knight Riders", "Mumbai Indians", "RCB", "Mumbai Indians"],
+    "Category": ["Batsman", "Batsman", "Batsman", "Bowler", "Batsman", "Batsman"],
+    "BidPrice": [13, 12, np.nan, 10, 17, np.nan],
+    "Runs": [1000, 2400, 900, 200, 3600, 3700]
+}
+df = pd.DataFrame(data)
+print("First 2 rows:\n", df.head(2))
+print("\nLast 3 rows:\n", df.tail(3))
+print("\nNull values:\n", df.isnull())
+df["BidPrice"].fillna(df["BidPrice"].mean(), inplace=True)
+print("\nAfter replacing null values:\n", df)
+expensive = df.loc[df["BidPrice"].idxmax()]
+print("\nMost expensive player:\n", expensive)
+print("\nTotal players per team:\n", df["Team"].value_counts())  
+
+
+
+
+slip 3
+
+
+def factorial(n):
+    f=1
+    for i in range(1,n+1): f*=i
+    return f
+power={i:i**2 for i in range(1,11)}
+vowels=['a','e','i','o','u']
+n=int(input("Enter: "))
+print(factorial(n), power[n], vowels[1])
+
+
+
+
+slip 4
+
+
+import pandas as pd
+df = pd.DataFrame({
+    "Company":["Apsara","Natraj","Cello","Parkar","Apsara"],
+    "Count":[15,20,25,35,20],
+    "Price":[250,200,600,900,300]
+}, index=["Pencil","Pencil","Pen","Pen","Eraser"])
+print(df.loc["Pencil"])
+df.loc["Eraser","Count"] = 25
+print(df[["Company","Price"]])
+print(df.loc[["Pencil","Pen"]])
+df.rename(columns={"Count":"Quantity"}, inplace=True)
+print(df)
+
+
+
+slip 5
+
+
+def open_account(name):
+    print("Account created for", name)
+def apply_loan(amount):
+    print("Loan applied for", amount)
+name = input("Enter name: ")
+amount = int(input("Enter loan amount: "))
+open_account(name)
+apply_loan(amount)
+
+
+
+
+slip 6
+
+import pandas as pd
+data = pd.DataFrame({
+    "Company":["Apsara","Natraj","Cello","Parkar","Apsara"],
+    "Count":[15,20,25,35,20],
+    "Price":[250,200,600,900,300]
+}, index=["Pencil","Pencil","Pen","Pen","Eraser"])
+print(data.loc["Pencil"])
+data.loc["Eraser","Count"] = 25
+print(data[["Company","Price"]])
+print(data.loc[["Pencil","Pen"]])
+data.drop("Count", axis=1, inplace=True)
+print(data)
+
+
+
+slip 7
+
+import os
+file1 = input("Enter source file name: ")
+file2 = input("Enter destination file name: ")
+if os.path.exists(file1):
+    with open(file1, "r") as f1:
+        data = f1.read()
+    with open(file2, "w") as f2:
+        f2.write(data)
+    print("\nCopied File Content:\n")
+    print(data)
+    lines = data.split("\n")
+    words = data.split()
+    chars = len(data)
+    print("\nTotal Lines:", len(lines))
+    print("Total Words:", len(words))
+    print("Total Characters:", chars)
+else:
+    print("File does not exist!")
+
+
+
+slip 8
+
+
+import random
+my_list = [10, 20, 30, 40, 50]
+my_tuple = (1, 2, 3, 4, 5)
+my_string = "PYTHON"
+print("List:", random.sample(my_list, 3))
+print("Tuple:", random.sample(my_tuple, 3))
+print("String:", random.sample(my_string, 3))
+
+
+
+slip 9
+
+import pandas as pd
+df1 = pd.DataFrame({
+    "ID":["S1","S2","S3","S4","S5"],
+    "Name":["Anita","Sakshi","Om","Raj","Kanika"],
+    "Age":[18,23,20,21,20]
+})
+df2 = pd.DataFrame({
+    "ID":["S2","S4","S5","S6","S7"],
+    "City":["Pune","Nashik","Mumbai","Delhi","Nanded"],
+    "Marks":[97,78,86,66,54]
+})
+print(df1)
+print(df2)
+df3 = pd.merge(df1, df2, on="ID")
+print(df3)
+
+
+
+slip 10
+
+def cal_interest(amount, year):
+    return (amount * 5 * year) / 100   # 5% simple interest
+def convert(amount):
+    return amount * 0.012   # INR to USD
+amount = float(input("Enter amount: "))
+year = int(input("Enter years: "))
+print("Interest:", cal_interest(amount, year))
+print("USD:", convert(amount))
+
+
+slip 11
+
+
+text = input("Enter a string: ")
+words = text.split()
+vowels = "aeiouAEIOU"
+result = []
+for w in words:
+    if not any(v in w for v in vowels):
+        result.append(w)
+result.sort()
+print("Words without vowels:", result)
+print("Total count:", len(result))
+
+
+
+slip 12
+
+
+import random
+lst = [10, 20, 30, 40, 50]
+string = "PYTHON"
+tup = (1, 2, 3, 4, 5)
+print("List:", random.sample(lst, 3))
+print("String:", random.sample(string, 3))
+print("Tuple:", random.sample(tup, 3))
+
+
+
+
+slip 13
+
+import pandas as pd
+df1 = pd.DataFrame({
+    "ID":["S1","S2","S3","S4","S5"],
+    "Name":["Anita","Sakshi","Om","Raj","Kanika"],
+    "Age":[18,23,20,21,20]
+})
+df2 = pd.DataFrame({
+    "ID":["S2","S4","S5","S6","S7"],
+    "City":["Pune","Nashik","Mumbai","Delhi","Nanded"],
+    "Marks":[97,78,86,66,54]
+})
+print(df1)
+print(df2)
+df3 = pd.merge(df1, df2, on="ID")
+print(df3)
+
+
+
+slip 14
+
+def factorial(n):
+    f = 1
+    for i in range(1, n+1):
+        f *= i
+    return f
+power = {i: i**2 for i in range(1, 11)}
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+
+
+
+slip 15
+
+
+import re
+url = input("Enter URL: ")
+pattern = r"https?://(www\.)?\w+\.\w+"
+if re.fullmatch(pattern, url):
+    print("Valid URL")
+else:
+    print("Invalid URL")
+
+
+slip 16
+
+import pandas as pd
+import numpy as np
+data = {
+    "Player": ["Hardik Pandya", "K L Rahul", "Andre Russel", "Jasprit Bumrah", "Virat Kohli", "Rohit Sharma"],
+    "Team": ["Mumbai Indians", "Kings Eleven", "Kolkata Knight Riders", "Mumbai Indians", "RCB", "Mumbai Indians"],
+    "Category": ["Batsman", "Batsman", "Batsman", "Bowler", "Batsman", "Batsman"],
+    "BidPrice": [13, 12, np.nan, 10, 17, np.nan],
+    "Runs": [1000, 2400, 900, 200, 3600, 3700]
+}
+df = pd.DataFrame(data)
+print("First 2 rows:\n", df.head(2))
+print("\nLast 3 rows:\n", df.tail(3))
+print("\nNull values:\n", df.isnull())
+df["BidPrice"].fillna(df["BidPrice"].mean(), inplace=True)
+print("\nAfter replacing null values:\n", df)
+expensive = df.loc[df["BidPrice"].idxmax()]
+print("\nMost expensive player:\n", expensive)
+print("\nTotal players per team:\n", df["Team"].value_counts())  
+
+
+
+slip 17
+
+import random
+lst = [10, 20, 30, 40, 50]
+s = "PYTHON"
+t = (1, 2, 3, 4, 5)
+print("List:", random.sample(lst, 3))
+print("String:", random.sample(s, 3))
+print("Tuple:", random.sample(t, 3))
+
+
+
+slip 18
+
+def science():
+    return ["Physics", "Chemistry", "Biology"]
+def arts():
+    return ["History", "Geography", "Political Science"]
+print("Science Subjects:", science())
+print("Arts Subjects:", arts())
+
+
+
+slip 19
+
+import pandas as pd
+import numpy as np
+data = {
+    "Player": ["Hardik Pandya", "K L Rahul", "Andre Russel", "Jasprit Bumrah", "Virat Kohli", "Rohit Sharma"],
+    "Team": ["Mumbai Indians", "Kings Eleven", "Kolkata Knight Riders", "Mumbai Indians", "RCB", "Mumbai Indians"],
+    "Category": ["Batsman", "Batsman", "Batsman", "Bowler", "Batsman", "Batsman"],
+    "BidPrice": [13, 12, np.nan, 10, 17, np.nan],
+    "Runs": [1000, 2400, 900, 200, 3600, 3700]
+}
+df = pd.DataFrame(data)
+print("First 2 rows:\n", df.head(2))
+print("\nLast 3 rows:\n", df.tail(3))
+print("\nNull values:\n", df.isnull())
+df["BidPrice"].fillna(df["BidPrice"].mean(), inplace=True)
+print("\nAfter replacing null values:\n", df)
+expensive = df.loc[df["BidPrice"].idxmax()]
+print("\nMost expensive player:\n", expensive)
+print("\nTotal players per team:\n", df["Team"].value_counts())  
+
+
+slip 20
+
+import pandas as pd
+df = pd.DataFrame({
+    "school":["S1","S2","S3","S4","S5","S6"],
+    "class":["S001","S002","S003","S004","S005","S006"],
+    "name":["Asha","Fransis","Charlie","David","Shyam","Eashel"],
+    "date_of_birth":["15/05/2002","17/05/2002","16/02/1999","25/09/1998","11/05/2002","15/09/1997"],
+    "age":[12,12,13,14,12,16],
+    "height":[173,192,186,167,151,159],
+    "weight":[35,32,33,30,31,32],
+    "address":["Street1","Street2","Street3","Street4","Street5","Street6"]
+})
+g = df.groupby("school")
+print(type(g))
+print(g["age"].agg(["mean","min","max"]))
+print((df["weight"] > 32).sum())
+
+
+
+slip 21
+
+def open_account(name):
+    print("Account created for", name)
+def apply_loan(amount):
+    print("Loan applied for", amount)
+open_account("Shweta")
+apply_loan(50000)
+
+
+slip 22
+
+import pandas as pd
+df1 = pd.DataFrame({
+    "ID":["S1","S2","S3","S4","S5"],
+    "Name":["Anita","Sakshi","Om","Raj","Kanika"],
+    "Age":[18,23,20,21,20]
+})
+df2 = pd.DataFrame({
+    "ID":["S2","S4","S5","S6","S7"],
+    "City":["Pune","Nashik","Mumbai","Delhi","Nanded"],
+    "Marks":[97,78,86,66,54]
+})
+print(df1)
+print(df2)
+df3 = pd.merge(df1, df2, on="ID")
+print(df3)
+
+
+
+slip 23
+
+text = input("Enter a string: ")
+words = text.split()
+vowels = "aeiouAEIOU"
+result = [w for w in words if not any(v in w for v in vowels)]
+result.sort()
+print("Words without vowels:", result)
+print("Total count:", len(result))
+
+
+slip 24
+
+
+def check_pass_fail(marks):
+    return "Pass" if marks >= 40 else "Fail"
+n = int(input("Enter number of students: "))
+pass_count = 0
+fail_count = 0
+for i in range(n):
+    marks = int(input("Enter marks: "))
+    result = check_pass_fail(marks)
+    print("Result:", result)
+    if result == "Pass":
+        pass_count += 1
+    else:
+        fail_count += 1
+print("Total Pass:", pass_count)
+print("Total Fail:", fail_count)
+
+
+
+slip 25
+
+import re
+url = input("Enter URL: ")
+pattern = r"https?://(www\.)?\w+\.\w+"
+if re.fullmatch(pattern, url):
+    print("Valid URL")
+else:
+    print("Invalid URL")
+
+
+
+
+slip 26
+
+
+import pandas as pd
+data = pd.DataFrame({
+    "Company":["Apsara","Natraj","Cello","Parkar","Apsara"],
+    "Count":[15,20,25,35,20],
+    "Price":[250,200,600,900,300]
+}, index=["Pencil","Pencil","Pen","Pen","Eraser"])
+print(data.loc["Pencil"])
+data.loc["Eraser","Count"] = 25
+print(data[["Company","Price"]])
+print(data.loc[["Pencil","Pen"]])
+data["Colour"] = ["Blue","Red","Black","Green","White"]
+print(data)
+
+
+
+slip 27
+
+import re
+pwd = input("Enter password: ")
+if 6 <= len(pwd) <= 12 and \
+   re.search(r"[a-z]", pwd) and \
+   re.search(r"[0-9]", pwd) and \
+   re.search(r"[$#@]", pwd):
+    print("Valid Password")
+else:
+    print("Invalid Password")
+
+
+
+slip 28
+
+
+def science():
+    return ["Physics", "Chemistry", "Biology"]
+def arts():
+    return ["History", "Geography", "Political Science"]
+print("Science Subjects:", science())
+print("Arts Subjects:", arts())
+
+
+
+
+slip 29
+
+import re
+num = input("Enter mobile number: ")
+pattern = r"^(0|91)?[6-9][0-9]{9}$"
+if re.fullmatch(pattern, num):
+    print("Valid Mobile Number")
+else:
+    print("Invalid Mobile Number")
+
+
+slip 30
+
+
+def check_pass_fail(marks):
+    return "Pass" if marks >= 40 else "Fail"
+n = int(input("Enter number of students: "))
+pass_count = 0
+fail_count = 0
+for i in range(n):
+    marks = int(input("Enter marks: "))
+    result = check_pass_fail(marks)
+    print("Result:", result)
+    if result == "Pass":
+        pass_count += 1
+    else:
+        fail_count += 1
+print("Total Pass:", pass_count)
+print("Total Fail:", fail_count)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
