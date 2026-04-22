@@ -1,0 +1,38 @@
+Q1. Write Python code to create a dictionary containing mobile names and their prices. Create
+DataFrame from this dictionary. Display the contents of DataFrame.
+
+import pandas as pd
+mobile_data = {
+    "Mobile": ["Samsung", "iPhone", "OnePlus", "Realme", "Redmi"],
+    "Price": [20000, 70000, 35000, 15000, 12000]
+}
+df = pd.DataFrame(mobile_data)
+print(df)
+
+
+Q2. Create a package vehicle with a sub package types, sub package type contains modules cars and
+bikes. Each module should have a function available_models() returning a list of models. Write a
+python program to display all available models of cars and bikes.
+
+class cars:
+    def available_models():
+        return ["Swift", "Creta", "Fortuner", "i20"]
+class bikes:
+    def available_models():
+        return ["Activa", "Pulsar", "Royal Enfield", "KTM"]
+print("Available Car Models:")
+for car in cars.available_models():
+    print(car)
+print("\nAvailable Bike Models:")
+for bike in bikes.available_models():
+    print(bike)
+
+
+
+
+
+
+
+
+
+
