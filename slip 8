@@ -1,0 +1,34 @@
+Q1. Write a python program to accepts value of radius from user and calculate the area of a circle using
+function. (Use 3.14 as the value of π).
+
+
+def area_circle(radius):
+    return 3.14 * radius * radius
+r = float(input("Enter radius: "))
+area = area_circle(r)
+print("Area of circle:", area)
+
+
+
+Q2. Write a python program to create a list, string and tuple in python. Apply random module to display
+unique multiple random elements from above created sequence type.
+
+
+import random
+my_list = [10, 20, 30, 40, 50]
+my_tuple = (1, 2, 3, 4, 5)
+my_string = "PYTHON"
+list_random = random.sample(my_list, 3)
+tuple_random = random.sample(my_tuple, 3)
+string_random = random.sample(my_string, 3)
+print("Random elements from list:", list_random)
+print("Random elements from tuple:", tuple_random)
+print("Random elements from string:", string_random)
+
+
+
+
+
+
+
+
