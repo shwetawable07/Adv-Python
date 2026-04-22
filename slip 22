@@ -1,0 +1,37 @@
+Q1. Write a Python program that accepts value of m and n. Divides m by n and handles a ZeroDivisionError if the user tries to divide by zero.
+
+
+try:
+    m = float(input("Enter value of m: "))
+    n = float(input("Enter value of n: "))
+    result = m / n
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+
+
+
+
+Q2. Write a python program for following -
+a) Create DataFrames Student 1, Student 2 and display contents
+b) Merge two DataFrames in third frame .
+c) Display contents of third DataFrame.
+
+
+import pandas as pd
+data1 = {
+    "ID": ["S1", "S2", "S3", "S4", "S5"],
+    "Name": ["Anita", "Sakshi", "Om", "Raj", "Kanika"],
+    "Age": [18, 23, 20, 21, 20]
+}
+df1 = pd.DataFrame(data1)
+data2 = {
+    "ID": ["S2", "S4", "S5", "S6", "S7"],
+    "City": ["Pune", "Nashik", "Mumbai", "Delhi", "Nanded"],
+    "Marks": [97, 78, 86, 66, 54]
+}
+df2 = pd.DataFrame(data2)
+print("Student 1:\n", df1)
+print("\nStudent 2:\n", df2)
+df3 = pd.merge(df1, df2, on="ID")
+print("\nMerged DataFrame:\n", df3)
