@@ -1,0 +1,23 @@
+Q1. Write a Python program to shuffle a deck of card. Display the cards obtained by a user in 5 attempts.
+
+
+import random
+suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
+values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+deck = [v + " of " + s for s in suits for v in values]
+random.shuffle(deck)
+print("Cards drawn:")
+for i in range(5):
+    print(deck[i])
+
+
+
+Q2. Write a python program to check weather given url is valid or not? (for Ex: https://www.yahoo.com)
+
+
+url = input("Enter URL: ")
+if url.startswith("https://"):
+    print("Valid URL")
+else:
+    print("Invalid URL")
+    
