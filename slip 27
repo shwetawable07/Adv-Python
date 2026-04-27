@@ -1,0 +1,25 @@
+Q1. Write a Python program that generates a random radius and computes the circumference of a circle using the math module. (Use 3.14 as the value of π)   
+
+import random
+import math
+r = random.randint(1, 10)
+circumference = 2 * 3.14 * r
+print("Radius:", r)
+print("Circumference:", circumference)
+
+
+Q2. Write a python program to list all files in a current directory. Display total count of .py files and content of any one .py files. 
+
+import os
+files = os.listdir()
+print("All files in current directory:")
+for f in files:
+    print(f)
+py_files = [f for f in files if f.endswith(".py")]
+print("\nTotal .py files:", len(py_files))
+if py_files:
+    print("\nContent of", py_files[0], ":\n")
+    with open(py_files[0], "r") as file:
+        print(file.read())
+else:
+    print("\nNo .py files found.")
