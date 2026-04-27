@@ -1,0 +1,21 @@
+Q1. Write a Python program to get the current time and demonstrate the following functions from the time module:        
+a) Converts time in seconds to a struct_time in UTC  b) Converts a struct_time object into a formatted string. 
+
+import time
+current_seconds = time.time()
+print("Current time in seconds:", current_seconds)
+utc_time = time.gmtime(current_seconds)
+print("UTC struct_time:", utc_time)
+formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", utc_time)
+print("Formatted UTC time:", formatted_time)
+
+
+Q2. Write a python program to check weather given url is valid or not? (for Ex: https://www.yahoo.com) 
+
+import urllib.request
+url = input("Enter URL: ")
+try:
+    response = urllib.request.urlopen(url)
+    print("Valid URL")
+except:
+    print("Invalid URL")
