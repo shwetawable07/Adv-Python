@@ -1,0 +1,47 @@
+Q.1] Write a Python program that prompts the user to input two numbers and raises a TypeError exception if the inputs are not numerical.
+
+
+try:
+    a = input("Enter first number: ")
+    b = input("Enter second number: ")
+    if not (a.replace('.', '', 1).isdigit() and b.replace('.', '', 1).isdigit()):
+        raise TypeError("Inputs must be numbers")
+    a = float(a)
+    b = float(b)
+    print("Numbers are:", a, b)
+except TypeError as e:
+    print("Error:", e)
+
+
+
+Q2. Create a following DataFrame named as “data”. Write the python code for the following
+a) Find all rows with the label “Pencil”. Extract all columns
+b) Change the count of Eraser as 25 instead of 20.
+c) List only the columns Company and Price.
+d) List only rows with labels ‘Pencil’ and ‘Pen’
+e) Delete column Count from the above DataFrame and display DataFrame..
+
+
+import pandas as pd
+
+data = pd.DataFrame
+({
+    "Item": ["Pencil", "Pencil", "Pen", "Pen", "Eraser"],
+    "Company": ["Apsara", "Natraj", "Cello", "Parkar", "Apsara"],
+    "Count": [15, 20, 25, 35, 20],
+    "Price": [250, 200, 600, 900, 300]
+})
+print("Original DataFrame:\n", data)
+print("\na) Pencil rows:\n", data[data["Item"] == "Pencil"])
+data.loc[data["Item"] == "Eraser", "Count"] = 25
+print("\nb) Updated DataFrame:\n", data)
+print("\nc) Company and Price:\n", data[["Company", "Price"]])
+print("\nd) Pencil and Pen rows:\n", data[data["Item"].isin(["Pencil", "Pen"])])
+data = data.drop("Count", axis=1)
+print("\ne) After deleting Count:\n", data)
+
+
+
+
+
+
