@@ -1,0 +1,21 @@
+Q1. Write a Python program to list all files and folders in the current directory using os.listdir(). 
+
+import os
+items = os.listdir()
+print("Files and Folders in current directory:")
+for item in items:
+    print(item)
+
+
+Q2. Build a package education with a sub package courses, containing modules science.py and  arts.py. Each module should have a function get_subjects(). Write a python program to display all  subjects.    
+
+def science_get_subjects():
+    return ["Physics", "Chemistry", "Biology"]
+def arts_get_subjects():
+    return ["History", "Geography", "Literature"]
+print("Science Subjects:")
+for sub in science_get_subjects():
+    print(sub)
+print("\nArts Subjects:")
+for sub in arts_get_subjects():
+    print(sub)
