@@ -1,0 +1,30 @@
+Q1. Write a python program to accept a string and substring from user. Check if a particular substring is present at the beginning of the given string, give appropriate message. (Use RE module) \
+
+import re
+s = input("Enter main string: ")
+sub = input("Enter substring: ")
+pattern = "^" + sub  
+if re.match(pattern, s):
+    print("Substring is present at the beginning.")
+else:
+    print("Substring is NOT present at the beginning.")
+
+
+Q2. Write a python program to create a module containing factorial function, power dictionary and list of vowels. Save this as variables.py.
+Import variables module to print the factorial of n, print the power of n, and second alphabet from the vowels list. (Accept n from user)  
+
+def factorial(n):
+    f = 1
+    for i in range(1, n+1):
+        f *= i
+    return f
+power = {
+    1: 1,
+    2: 4,
+    3: 9,
+    4: 16,
+    5: 25
+}
+
+# list of vowels
+vowels = ['a', 'e', 'i', 'o', 'u']
