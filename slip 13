@@ -1,0 +1,32 @@
+Q1.Write a Python program to get the current time and demonstrate the following functions from the time module:
+a) Convert the current time in seconds to a readable string
+b) Converts time in seconds to a struct_time in UTC
+
+
+import time
+current_time = time.time()
+print("Current time (seconds):", current_time)
+readable = time.ctime(current_time)
+print("Readable time:", readable)
+utc_time = time.gmtime(current_time)
+print("UTC struct_time:", utc_time)
+
+
+Q2. Write a Python program that prompts the user to enter a text file name. If the file exists, open it in read mode, display its contents line by line, and show the current file pointer position after each
+line using ftell(). Then move the file pointer back to the beginning using seek() and display the file content again. If the file does not exist, display an appropriate error message.
+
+
+filename = input("Enter file name: ")
+try:
+    f = open(filename, "r")
+    print("\n--- Reading file line by line ---")
+    for line in f:
+        print(line.strip())
+        print("File pointer position:", f.tell())
+    f.seek(0)
+    print("\n--- After seek(0) ---")
+    for line in f:
+        print(line.strip())
+    f.close()
+except FileNotFoundError:
+    print("Error: File does not exist")
