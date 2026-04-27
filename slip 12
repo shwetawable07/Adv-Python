@@ -1,0 +1,21 @@
+Q1. Create a data.csv file containing employee name, designation, salary of an employee. Write a python program to create a DataFrame using data.csv and display the contents of DataFrame with 
+statistical information of dataframe.
+
+
+import pandas as pd
+data = pd.read_csv("data.csv")
+print("DataFrame:\n", data)
+print("\nStatistical Info:\n", data.describe())
+
+
+
+Q2. Write a python program to create a list, string and tuple in python. Apply random module to display unique multiple random elements from above created sequence type.
+
+
+import random
+lst = [10, 20, 30, 40, 50]
+string = "HELLOPYTHON"
+tup = (1, 2, 3, 4, 5, 6)
+print("Random from list:", random.sample(lst, 3))
+print("Random from string:", random.sample(string, 4))
+print("Random from tuple:", random.sample(tup, 3))
