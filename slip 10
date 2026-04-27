@@ -1,0 +1,29 @@
+Q1. Write a python program to create a DataFrame from list of 10 integer values. Display contents of DataFrame and calculate sum, mean, median, mode, Standard deviation of DataFrame.
+
+
+import pandas as pd
+lst = [10, 20, 30, 40, 50, 20, 30, 40, 10, 60]
+data = pd.DataFrame(lst, columns=["Numbers"])
+print("DataFrame:\n", data)
+print("\nSum:", data["Numbers"].sum())
+print("Mean:", data["Numbers"].mean())
+print("Median:", data["Numbers"].median())
+print("Mode:\n", data["Numbers"].mode())
+print("Standard Deviation:", data["Numbers"].std())
+
+
+Q2. Create a package finance_tools with modules interest.py and currency.py
+a) interest.py should contain function cal_interest(amount, year) that accepts amount, year . Calculates and returns simple interest using a fixed rate (for example, 5%).
+b) currency.py should contain function converet(amount) that accepts amount in INR and converts it into USD. (consider conversion rate 0.012)
+Write a python program to import modules from finance_tools package and demonstrate both functions.
+
+
+
+def cal_interest(amount, year):
+    return amount * 0.05 * year
+def convert(amount):
+    return amount * 0.012
+amt = float(input("Enter amount: "))
+yr = int(input("Enter years: "))
+print("Simple Interest:", cal_interest(amt, yr))
+print("Amount in USD:", convert(amt))
