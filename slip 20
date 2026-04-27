@@ -1,0 +1,33 @@
+Q1. Write a python program to accept a string, Count total number of vowels, consonants and special symbols from it.   
+
+s = input("Enter a string: ")
+vowels = "aeiouAEIOU"
+v = c = sp = 0
+for ch in s:
+    if ch.isalpha():  # letters only
+        if ch in vowels:
+            v += 1
+        else:
+            c += 1
+    else:
+        sp += 1   # everything else (digits, space, symbols)
+print("Vowels:", v)
+print("Consonants:", c)
+print("Special symbols:", sp)
+
+Q2. Write a Python program to accept a file name and a byte position as input. If file exist open a file in read mode and move the file pointer to the given byte position, 
+prints the content of the file from that position till end of file otherwise give appropriate message.   
+
+
+filename = input("Enter file name: ")
+pos = int(input("Enter byte position: "))
+try:
+    with open(filename, "r") as f:
+        f.seek(pos)   # move file pointer
+        content = f.read()
+        print("File content from position", pos, ":\n")
+        print(content)
+except FileNotFoundError:
+    print("File does not exist.")
+except Exception as e:
+    print("Error:", e)
