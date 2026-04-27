@@ -1,0 +1,23 @@
+Q1. Write a python program to create a DataFrame using Iris.csv file. Display the contents of DataFrame and statistical information of DataFrame.  
+
+import pandas as pd
+df = pd.read_csv("Iris.csv")
+print("DataFrame:\n")
+print(df)
+print("\nStatistical Information:\n")
+print(df.describe())
+
+Q2. Write a Python program that accepts text file name and a string. If file exist, then appends string to its content and display the contents of the file otherwise gives appropriate message. 
+
+filename = input("Enter file name: ")
+text = input("Enter text to append: ")
+try:
+        with open(filename, "a") as f:
+        f.write(text + "\n")
+    with open(filename, "r") as f:
+        print("\nUpdated File Content:\n")
+        print(f.read())
+except FileNotFoundError:
+    print("File does not exist.")
+except Exception as e:
+    print("Error:", e)
