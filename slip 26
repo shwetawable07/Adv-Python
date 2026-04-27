@@ -1,0 +1,16 @@
+Q1. Write a python program to remove all whitespaces from a given string. Display modified string.
+
+s = input("Enter a string: ")
+result = "".join(s.split())
+print("Modified string:", result)
+
+ Q2.Create a following DataFrame named as “data”. Write the python code for the following commands.
+
+import pandas as pd
+data = pd.DataFrame({
+    "Item": ["Pencil", "Pencil", "Pen", "Pen", "Eraser"],
+    "Company": ["Apsara", "Natraj", "Cello", "Parkar", "Apsara"],
+    "Count": [15, 20, 25, 35, 20],
+    "Price": [250, 200, 600, 900, 300]
+})
+print(data)
