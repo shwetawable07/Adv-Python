@@ -1,0 +1,33 @@
+Q1. Write a Python program to accept a string and replace all occurrences of a spaces with a colon and comma with dot. Display modified string.
+
+s = input("Enter a string: ")
+s = s.replace(" ", ":")
+s = s.replace(",", ".")
+print("Modified string:", s)
+
+Q2. Write a python program using user define function to accept a number and perform the following task:
+a) Check number is Armstrong or not. b) Calculate and display sum of digits till single digit [e.g. -  558 = 18 = 9] 
+def is_armstrong(n):
+    num = n
+    digits = len(str(n))
+    sum = 0
+
+    while n > 0:
+        d = n % 10
+        sum += d ** digits
+        n //= 10
+    return sum == num
+def single_digit_sum(n):
+    while n >= 10:
+        s = 0
+        while n > 0:
+            s += n % 10
+            n //= 10
+        n = s
+    return n
+n = int(input("Enter a number: "))
+if is_armstrong(n):
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+print("Single digit sum:", single_digit_sum(n))
