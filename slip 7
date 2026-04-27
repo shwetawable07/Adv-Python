@@ -1,0 +1,63 @@
+Q1. Write a python program to accept a string, extract all words that start with a capital letter and remove all special characters from a string. Display modified string. (Accept input from user)
+
+import re
+s = input("Enter a string: ")
+clean = re.sub(r'[^A-Za-z0-9 ]', '', s)
+words = clean.split()
+cap_words = [w for w in words if w[0].isupper()]
+print("Words starting with capital letters:", cap_words)
+print("Modified string:", clean)
+
+
+Q2. Create a Web Page using Flask which contains following information about your Library Book List
+a) Show the library name as a heading.
+b) Display all available books in a table with title and author.
+c) Add quote about reading in bold and blue color.
+
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    library_name = "My Library"
+
+    books = [
+        ("Python Basics", "John Smith"),
+        ("Data Science", "Alice Brown"),
+        ("Machine Learning", "David Lee")
+    ]
+
+    # Build table rows manually
+    rows = ""
+    for title, author in books:
+        rows += f"<tr><td>{title}</td><td>{author}</td></tr>"
+
+    html = f"""
+    <html>
+    <head><title>Library</title></head>
+    <body>
+
+    <h1>{library_name}</h1>
+
+    <table border="1">
+        <tr><th>Title</th><th>Author</th></tr>
+        {rows}
+    </table>
+
+    <p style="color:blue; font-weight:bold;">
+        A room without books is like a body without a soul.
+    </p>
+
+    </body>
+    </html>
+    """
+
+    return html
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
