@@ -1,0 +1,32 @@
+Q1. Write a Python program to shuffle a deck of card. Display the cards obtained by a user in 5 attempts.  
+
+
+import random
+suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10',
+         'Jack', 'Queen', 'King', 'Ace']
+deck = [(rank, suit) for suit in suits for rank in ranks]
+random.shuffle(deck)
+print("Cards drawn:")
+for i in range(5):
+    print(deck[i][0], "of", deck[i][1])
+
+
+Q2. Consider a following record in DataFrame IPL 
+Create above DataFrame in python and write python code for following
+a) Retrieve first 2 rows 3700 b) Retrieve last 3 rows c) Check null values in DataFrame. d) Replace null values with mean of that column. 
+e) Find most expensive player. f) Print total players per team. 
+
+
+import pandas as pd
+import numpy as np
+data = {
+    "Player": ["Hardik Pandya", "K L Rahul", "Andre Russell", "Jasprit Bumrah", "Virat Kohli", "Rohit Sharma"],
+    "Team": ["Mumbai Indians", "Kings Eleven", "Kolkata Knight Riders", "Mumbai Indians", "RCB", "Mumbai Indians"],
+    "Category": ["Batsman", "Batsman", "Batsman", "Bowler", "Batsman", "Batsman"],
+    "BidPrice": [None, 1000, 2400, 900, None, 3600],
+    "Runs": [None, 12, 7, 10, None, 15]
+}
+
+df = pd.DataFrame(data)
+print(df)
