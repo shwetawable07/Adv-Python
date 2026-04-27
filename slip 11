@@ -1,0 +1,22 @@
+Q1. Write a python code to a create a list of 10 integer numbers. Display square of all elements of list. (Use a lambda function with map()) 
+
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+squares = list(map(lambda x: x*x, lst))
+print("Original List:", lst)
+print("Squares:", squares)
+
+
+Q2. Write a Python program that accepts a string from the user and performs the following tasks:
+a) Split the string into individual words.
+b) Identify and display all words that do not contain any vowels (a, e, i, o, u), ignore case while checking for vowels.
+c) Sort and display these words in alphabetical order.
+d) Display the total count of such words.
+
+
+s = input("Enter a string: ")
+words = s.split()
+no_vowel = [w for w in words if not any(v in w.lower() for v in "aeiou")]
+no_vowel.sort()
+print("Words without vowels:", no_vowel)
+print("Count:", len(no_vowel))
