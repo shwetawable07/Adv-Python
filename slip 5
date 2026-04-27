@@ -1,0 +1,20 @@
+Q.1] Write a python program to accept a string, find all words that do not contain vowels.
+
+s = input("Enter a string: ")
+words = s.split()
+for w in words:
+    if not any(v in w.lower() for v in "aeiou"):
+        print(w)
+
+
+
+Q.2] Write a python program to create a list of prime numbers between m and n using List comprehension. (Accept the value of m and n from user, m should be less than n)
+
+m = int(input("Enter m: "))
+n = int(input("Enter n: "))
+if m >= n:
+    print("m should be less than n")
+else:
+    primes = [x for x in range(m, n+1)
+              if x > 1 and all(x % i != 0 for i in range(2, int(x**0.5)+1))]
+    print("Prime numbers:", primes)
